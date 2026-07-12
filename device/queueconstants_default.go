@@ -15,5 +15,5 @@ const (
 	QueueInboundSize           = 1024
 	QueueHandshakeSize         = 1024
 	MaxSegmentSize             = (1 << 16) - 1 // largest possible UDP datagram
-	PreallocatedBuffersPerPool = 0             // Disable and allow for infinite memory growth
+	PreallocatedBuffersPerPool = 1024          // bounded (upstream iOS/Windows profile): backpressure instead of OOM on low-RAM routers
 )
